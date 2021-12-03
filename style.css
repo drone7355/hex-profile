@@ -92,6 +92,6 @@ body > main > footer {
   align-self: center;
 }
 
-a:visited {
+a,a:link,a:visited {
   color: var(--text-color);
 }

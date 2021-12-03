@@ -5,6 +5,8 @@ $(() => {
       $("[data-typewriter],li,.image")
         .eq(index)
         .each(function () {
+          if ($(this).is("li,.image")) $(this).addClass("loaded");
+
           if ($(this).is("[data-typewriter]")) {
             /**
              * @type {string}
@@ -30,11 +32,7 @@ $(() => {
             };
 
             requestAnimationFrame(step);
-          } else {
-            if ($(this).is("li,.image")) $(this).addClass("loaded");
-
-            typewriter(index + 1);
-          }
+          } else typewriter(index + 1);
         });
     })(0);
   }, 2000);

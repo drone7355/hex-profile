@@ -18,8 +18,6 @@ $(() => {
              */
             let start;
 
-            let previousI = 0;
-
             const step = (/** @type {number} */ timestamp) => {
               if (start === undefined) start = timestamp;
 

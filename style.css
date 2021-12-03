@@ -1,0 +1,86 @@
+body {
+  background-image: url("https://pbs.twimg.com/profile_images/1410571548709298180/Swq-54y2_400x400.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0px;
+  background-color: #0f0f0f;
+  transition: background-size 2s;
+
+  color: ghostwhite;
+  text-transform: uppercase;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --logo-size: calc(min(100vh, 100vw));
+  margin: 0%;
+  --max-content-width: calc(100vw - 32px);
+  padding: 16px;
+}
+
+body.loaded {
+  background-size: var(--logo-size);
+}
+
+body > main {
+  max-width: min(var(--logo-size) * 1.1, 100vw);
+}
+
+.summary {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.summary > .image {
+  clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+  background-color: #f869ff;
+}
+
+.summary > .image > img {
+  object-fit: contain;
+  max-width: 200px;
+  max-height: 200px;
+  clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+  transform: scale(95%);
+}
+
+.summary > .info {
+  margin-left: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  .summary {
+    flex-direction: column;
+  }
+
+  .summary > .image {
+    width: fit-content;
+  }
+
+  .summary > .image > img {
+    max-width: var(--max-content-width);
+    max-height: var(--max-content-width);
+  }
+
+  .summary > .info {
+    margin-left: unset;
+  }
+}
+
+li {
+  list-style: none;
+}
+li.loaded {
+  list-style: square;
+}
+
+.image {
+  transform: scale(0);
+  transition: transform 0.5s;
+}
+
+.image.loaded {
+  transform: scale(1)
+}

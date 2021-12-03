@@ -6,7 +6,8 @@ body {
   background-color: #0f0f0f;
   transition: background-size 2s;
 
-  color: ghostwhite;
+  --text-color: ghostwhite;
+  color: var(--text-color);
   text-transform: uppercase;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
     DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
@@ -25,6 +26,8 @@ body.loaded {
 
 body > main {
   max-width: min(var(--logo-size) * 1.1, 100vw);
+  display: flex;
+  flex-direction: column;
 }
 
 .summary {
@@ -82,5 +85,13 @@ li.loaded {
 }
 
 .image.loaded {
-  transform: scale(1)
+  transform: scale(1);
+}
+
+body > main > footer {
+  align-self: center;
+}
+
+a:visited {
+  color: var(--text-color);
 }
